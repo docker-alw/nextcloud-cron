@@ -1,11 +1,12 @@
 # vim:set ft=dockerfile:
+# hadolint ignore=DL3007
 FROM registry.gitlab.com/docker-alw/nextcloud-php-modules:latest
 
-RUN set -x \
-	&& apk --no-cache add php82
+# hadolint ignore=DL3018
+RUN apk --no-cache add php83
 
 VOLUME /app
 
 USER nextcloud
 
-CMD ["/usr/bin/php82", "-f", "/app/nextcloud/cron.php"]
+CMD ["/usr/bin/php83", "-f", "/app/nextcloud/cron.php"]
