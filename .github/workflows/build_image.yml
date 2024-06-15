@@ -13,7 +13,7 @@ name: "Build Main Image"
       - test.sh
   workflow_dispatch:
   schedule:
-    - cron: '23 10 5 * *'
+    - cron: '53 10 5 * *'
 
 jobs:
   build-push:

@@ -11,7 +11,7 @@ This image is intented to run within an internal docker network.
 
 ## Run
 
-To run this container using the default PHP-FPM configuration just run:
+To run this container just execute:
 ```
 docker network create -d bridge --subnet 10.0.1.0/24 "net-app"
 docker create --network net-app --name "nextcloud-cron" -v "/path/to/nextcloud-source-code/:/app/nextcloud/" "ghcr.io/docker-alw/nextcloud-cron"
