@@ -15,6 +15,8 @@ RUN ln -s "$(which "php${PHP_VERSION}")" /usr/bin/php
 
 VOLUME /app
 
-USER nextcloud
+# user 'nextcloud' with UID '960' created by
+# https://github.com/docker-alw/nextcloud-php-modules/blob/main/Dockerfile
+USER 960
 
 ENTRYPOINT ["/usr/bin/php", "-f", "/app/nextcloud/cron.php"]
