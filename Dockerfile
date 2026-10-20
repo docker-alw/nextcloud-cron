@@ -11,7 +11,7 @@ COPY test.sh /test.sh
 # hadolint ignore=DL3018
 RUN apk --no-cache add "php${PHP_VERSION}"
 
-RUN ln -s "$(which "php${PHP_VERSION}")" /usr/bin/php
+RUN rm -vf /usr/bin/php && ln -s "$(which "php${PHP_VERSION}")" /usr/bin/php
 
 VOLUME /app
 
